@@ -584,7 +584,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6061648261278580185, guid: 3e1fbd03a8c2247b6bcf6a4613153138, type: 3}
       propertyPath: speed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -6061648261278580185, guid: 3e1fbd03a8c2247b6bcf6a4613153138, type: 3}
       propertyPath: verticalInput
