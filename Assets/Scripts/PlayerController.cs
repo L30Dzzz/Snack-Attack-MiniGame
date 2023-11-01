@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-    //fix this tmrw, controlls are inverted
+    
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
     }
