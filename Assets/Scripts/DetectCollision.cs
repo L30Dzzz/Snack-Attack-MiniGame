@@ -11,6 +11,8 @@ public class DetectCollision : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             PlayerController pc = other.GetComponent<PlayerController>();
+
+            pc.goodParticle.Play();
             pc.score += scoreToAdd;
             Debug.Log(pc.score);
             Destroy(gameObject);

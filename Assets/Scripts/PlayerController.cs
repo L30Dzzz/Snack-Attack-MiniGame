@@ -8,6 +8,19 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float speed = 10.0f;
     public int score = 0;
+    
+    public AudioClip blipSound; 
+    public AudioClip boomSound;
+    private AudioSource playerAudio;
+
+    public ParticleSystem goodParticle;
+    public ParticleSystem badParticle;
+
+    void Start()
+    {
+        playerAudio = GetComponent<AudioSource>();
+    }
+    
 
     // Update is called once per frame
     void Update() 
@@ -19,5 +32,24 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // if player collides with green ball, fireworks
+        if (other.gameObject.CompareTag("Good"))
+        {
+            goodParticle.Play();
+            playerAudio.PlayOneShot(blipSound, 1.0f);
+            Destroy(other.gameObject);
+        } 
 
+        // if player collides with red ball, boom
+        else if (other.gameObject.CompareTag("Bad"))
+        {
+            badParticle.Play();
+            playerAudio.PlayOneShot(boomSound, 1.0f);
+            Destroy(other.gameObject);
+
+        }
+
+    }
 }
