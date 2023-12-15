@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Bad"))
         {
             badParticle.Play();
-            playerAudio.PlayOneShot(boomSound, 1.0f);
+            playerAudio.PlayOneShot(boomSound, 0.5f);
             Destroy(other.gameObject);
 
         }
